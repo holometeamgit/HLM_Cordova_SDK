@@ -1,0 +1,11 @@
+framework module HolomeSDK {
+  umbrella header "HolomeSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module HolomeSDK.Swift {
+    header "HolomeSDK-Swift.h"
+    requires objc
+}

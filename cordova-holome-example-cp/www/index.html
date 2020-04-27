@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ -->
+<html>
+    <head>
+        <!--
+         Customize this policy to fit your own app's needs. For more guidance, see:
+         https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+         Some notes:
+         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+         * Enable inline JS: add 'unsafe-inline' to default-src
+         -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+            <meta name="format-detection" content="telephone=no">
+                <meta name="msapplication-tap-highlight" content="no">
+                    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+                        <title>Hello World</title>
+                        <style>
+                            body {
+                                font-family: Arial;
+                                font-size: 14px;
+                            }
+                        .viewport {
+                            top: 50px;
+                            bottom: 50px;
+                            position: absolute;
+                            width: 100%;
+                        }
+                        .viewport .tab {
+                            height: 100%;
+                            overflow: scroll;
+                            width: 100%;
+                        }
+                        .nav {
+                            width: 100px;
+                            height: 100%;
+                            position: absolute;
+                            top: 50px;
+                            left: 0;
+                        }
+                        
+                        .container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                        }
+                        .header {
+                            height: 50px;
+                            line-height: 50px;
+                            text-align: center;
+                            background: #9f9f9f;
+                        }
+                        .footer {
+                            height: 50px;
+                            background: #9f9f9f;
+                            bottom: 0;
+                            width: 100%;
+                            position: absolute;
+                        }
+                        .nav {
+                            position: fixed;
+                            left: 0;
+                            width: 200px;
+                            background: #FFF;
+                            padding: 0;
+                        }
+                        .footer .tabs {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .tabs li {
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            line-height: 50px;
+                            text-align: center;
+                            float: left;
+                            width : 50%;
+                        }
+                        .videos li {
+                            position: relative;
+                            text-align: center;
+                            width: 50%;
+                            float: left;
+                            list-style: none;
+                        }
+                        .videos li img {
+                            width: 100%;
+                        }
+                        .videos {
+                            height:100%;
+                            width: 100%;
+                            background: #FFF;
+                            display: none;
+                        }
+                        .navigation {
+                            display: none;
+                            position: absolute;
+                            background: #fff;
+                            top: 50px;
+                            bottom: 50px;
+                            width: 100px;
+                        }
+                        .nav {
+                            background: url(./img/menu.png);
+                            background-size: contain;
+                            height: 40px;
+                            width: 40px;
+                            position: absolute;
+                            left: 10px;
+                            top: 5px;
+                            
+                        }
+                        .controls {
+                            position: absolute;
+                        }
+                        .controls input {
+                            height: 50px;
+                            width: 50px;
+                        }
+                        </style>
+                        </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                HolomeSDK Demo
+            </div>
+            <div class="viewport">
+                <div class="controls">
+                    <input name="focus" class="focus" type="checkbox" checked/>
+                </div>
+                <div class="ar tab">
+                </div>
+                <div class="videos tab">
+                </div>
+            </div>
+            <div class="footer">
+                <ul class="tabs">
+                    <li data-tab="ar"> AR </li>
+                    <li data-tab="videos"> Videos </li>
+                </ul>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

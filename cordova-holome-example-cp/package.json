@@ -1,0 +1,25 @@
+{
+    "name": "co.uk.holome",
+    "displayName": "HolomoCordova",
+    "version": "1.0.0",
+    "description": "An example HoloMe SDK integration.",
+    "main": "",
+    "scripts": {},
+    "author": "Islamov Denis",
+    "license": "MIT",
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-holome-sdk": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    },
+    "dependencies": {
+        "cordova-ios": "^5.0.0",
+        "cordova-plugin-add-swift-support": "^2.0.2",
+        "cordova-plugin-holome-sdk": "git+https://holome.visualstudio.com/cordova-holome-example/_git/cordova-holome-example",
+        "cordova-plugin-whitelist": "^1.3.3"
+    }
+}

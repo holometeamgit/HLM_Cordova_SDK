@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-holome-sdk" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Holome</name>
+    <js-module name="Holome" src="www/cordova-plugin-holome-sdk.js">
+        <clobbers target="Holome" />
+    </js-module>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+	         <feature name="Holome">
+	            <param name="ios-package" value="Holome" />
+	         </feature>
+		</config-file>
+    	
+    	<!-- Bridging header to allow use of framework in Cordova -->
+    	<header-file src="src/ios/Holome-Bridging-Header.h" type="BridgingHeader" />
+
+    	<!-- Plugin -->
+		<source-file src="src/ios/Holome.swift" />
+
+		<!-- Extensions-->
+		<source-file src="src/ios/Extensions/Holome+HolomeViewControllerDelegate.swift" />
+		<source-file src="src/ios/Extensions/HolomeViewController+ARSCNViewDelegate.swift" />
+		<source-file src="src/ios/Extensions/HolomeViewController+FocusSquareDelegate.swift" />
+		<source-file src="src/ios/Extensions/HolomeViewController+HolomeSDKDelegate.swift" />
+
+		<!-- Utilities -->
+		<source-file src="src/ios/Utilities/FileManager.swift" />
+		<source-file src="src/ios/Utilities/Utilities.swift" />
+
+		<!-- Holomes View Controller -->
+		<source-file src="src/ios/ViewControllers/HolomeViewController.swift" />
+
+		<!-- Storyboard / Resources -->
+        <resource-file src="src/ios/Resources/Holome.storyboard" />
+		
+		<!-- HolomeSDK -->
+		<framework src="src/ios/Resources/HolomeSDK.framework"  embed="true" custom="true" />
+
+		<!-- Dependecies -->
+        <dependency id="cordova-plugin-add-swift-support" version="~2.0.0" />
+
+	</platform>
+</plugin>
